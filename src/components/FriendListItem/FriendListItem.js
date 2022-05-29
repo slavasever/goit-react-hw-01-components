@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 function FriendListItem(props) {
-  const { avatar, name, isOnline, id } = props;
+  const { avatar, name, isOnline } = props;
   const itemClasses = ['item'];
 
   if (isOnline) {
