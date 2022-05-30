@@ -14,13 +14,17 @@ function TransactionHistory(props) {
       </thead>
 
       <tbody className={s.body}>
-        {items.map(item => (
-          <tr className={s.row} key={item.id}>
-            <td className={s.cell}>{item.type}</td>
-            <td className={s.cell}>{item.amount}</td>
-            <td className={s.cell}>{item.currency}</td>
-          </tr>
-        ))}
+        {items.map(item => {
+          const { id, type, amount, currency } = item;
+
+          return (
+            <tr className={s.row} key={id}>
+              <td className={s.cell}>{type}</td>
+              <td className={s.cell}>{amount}</td>
+              <td className={s.cell}>{currency}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );

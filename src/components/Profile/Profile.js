@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import s from './Profile.module.css';
 
-function Profile(params) {
-  const { username, tag, location, avatar, stats } = params;
+function Profile(props) {
+  const { username, tag, location, avatar, stats } = props;
+  const { followers, views, likes } = stats;
+
   return (
     <div className={s.profile}>
       <div className={s.description}>
@@ -15,15 +17,15 @@ function Profile(params) {
       <ul className={s.stats}>
         <li className={s.item}>
           <span className={s.label}>Followers</span>
-          <span className={s.quantity}>{stats.followers}</span>
+          <span className={s.quantity}>{followers}</span>
         </li>
         <li className={s.item}>
           <span className={s.label}>Views</span>
-          <span className={s.quantity}>{stats.views}</span>
+          <span className={s.quantity}>{views}</span>
         </li>
         <li className={s.item}>
           <span className={s.label}>Likes</span>
-          <span className={s.quantity}>{stats.likes}</span>
+          <span className={s.quantity}>{likes}</span>
         </li>
       </ul>
     </div>

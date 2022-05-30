@@ -6,14 +6,18 @@ function Friendlist(props) {
   const { items } = props;
   return (
     <ul className={s.list}>
-      {items.map(item => (
-        <FriendListItem
-          avatar={item.avatar}
-          name={item.name}
-          isOnline={item.isOnline}
-          key={item.id}
-        />
-      ))}
+      {items.map(item => {
+        const { avatar, name, isOnline, id } = item;
+
+        return (
+          <FriendListItem
+            avatar={avatar}
+            name={name}
+            isOnline={isOnline}
+            key={id}
+          />
+        );
+      })}
     </ul>
   );
 }

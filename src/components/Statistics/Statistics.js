@@ -7,16 +7,20 @@ function Statistics(props) {
     <section className={s.statistics}>
       {title && <h2 className={s.title}>Upload stats</h2>}
       <ul className={s.statList}>
-        {stats.map(item => (
-          <li
-            className={s.item}
-            key={item.id}
-            style={{ backgroundColor: getRandomHexColor() }}
-          >
-            <span className={s.label}>{item.label}</span>
-            <span className={s.percentage}>{item.percentage}%</span>
-          </li>
-        ))}
+        {stats.map(item => {
+          const { id, label, percentage } = item;
+
+          return (
+            <li
+              className={s.item}
+              key={id}
+              style={{ backgroundColor: getRandomHexColor() }}
+            >
+              <span className={s.label}>{label}</span>
+              <span className={s.percentage}>{percentage}%</span>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
